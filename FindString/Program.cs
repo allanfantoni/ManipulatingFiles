@@ -8,7 +8,7 @@ namespace FindString
         static void Main(string[] args)
         {
             Console.Write("Insert path: ");
-            var path = Console.ReadLine();
+            string path = Console.ReadLine();
 
             if (Directory.Exists(path))
                 SearchForString(path);
@@ -23,19 +23,19 @@ namespace FindString
             try
             {
                 Console.Write("Start character position: ");
-                var position = int.Parse(Console.ReadLine());
+                int position = int.Parse(Console.ReadLine());
 
                 Console.Write("Length: ");
-                var length = int.Parse(Console.ReadLine());
+                int length = int.Parse(Console.ReadLine());
 
                 Console.Write("Char/string to search: ");
-                var text = Console.ReadLine();
+                string text = Console.ReadLine();
 
                 var counterFiles = 0;
 
                 string[] files = Directory.GetFiles(path);
 
-                foreach (var file in files)
+                foreach (string file in files)
                 {
                     using (StreamReader sr = new StreamReader(file))
                     {
@@ -47,7 +47,7 @@ namespace FindString
                             if (line.Substring(position - 1, length) == text)
                             {
                                 counterLines++;
-                                Console.WriteLine(counterLines + " - File: " + file + " - Line: " + line);
+                                Console.WriteLine($"{counterLines} - File: {file} - Line: {line}");
                             }
                         }
 
@@ -56,12 +56,11 @@ namespace FindString
                     }
                 }
 
-                Console.WriteLine("Files read: " + counterFiles++);
+                Console.WriteLine($"Files read: {counterFiles++}");
             }
-
             catch (Exception ex)
             {
-                Console.WriteLine("Error message: " + ex.Message);
+                Console.WriteLine($"Error message: {ex.Message}");
             }
         }
     }

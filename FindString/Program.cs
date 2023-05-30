@@ -56,7 +56,7 @@ namespace FindString
                     }
                 }
 
-                Console.WriteLine($"Files read: {counterFiles++}");
+                Console.WriteLine($"Files read: {counterFiles}");
             }
             catch (Exception ex)
             {

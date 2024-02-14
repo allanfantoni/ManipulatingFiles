@@ -7,61 +7,26 @@ namespace FindString
     {
         static void Main(string[] args)
         {
-            Console.Write("Insert path: ");
-            string path = Console.ReadLine();
+            Console.WriteLine("========== Manipulating Files ==========");
+            Console.WriteLine("Choose an option: \n1- Find string in files. \n2- Rename files.");
+            int option = int.Parse(Console.ReadLine());
 
-            if (Directory.Exists(path))
-                SearchForString(path);
-            else
-                Console.WriteLine("Path does not exist or it was written wrongly.");
+            if (option != 1 && option != 2)
+            {
+                Console.WriteLine("Option does not exist.");
+                Console.WriteLine("Press any key to close the window.");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
 
+            if (option == 1)
+                Search.SearchForString();
+            else if (option == 2)
+                Rename.RenameFiles();
+
+            Console.WriteLine("Press any key to close the window.");
             Console.ReadKey();
-        }
-
-        public static void SearchForString(string path)
-        {
-            try
-            {
-                Console.Write("Start character position: ");
-                int position = int.Parse(Console.ReadLine());
-
-                Console.Write("Length: ");
-                int length = int.Parse(Console.ReadLine());
-
-                Console.Write("Char/string to search: ");
-                string text = Console.ReadLine();
-
-                var counterFiles = 0;
-
-                string[] files = Directory.GetFiles(path);
-
-                foreach (string file in files)
-                {
-                    using (StreamReader sr = new StreamReader(file))
-                    {
-                        var counterLines = 0;
-                        var line = "";
-
-                        while ((line = sr.ReadLine()) != null)
-                        {
-                            if (line.Substring(position - 1, length) == text)
-                            {
-                                counterLines++;
-                                Console.WriteLine($"{counterLines} - File: {file} - Line: {line}");
-                            }
-                        }
-
-                        counterFiles++;
-                        sr.Close();
-                    }
-                }
-
-                Console.WriteLine($"Files read: {counterFiles}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error message: {ex.Message}");
-            }
+            Environment.Exit(0);
         }
     }
 }

@@ -12,12 +12,17 @@ namespace FindString
                 Console.WriteLine("========== Search For String ==========");
 
                 Console.Write("Insert path: ");
-                string path = Console.ReadLine();
+                string path = "";
 
-                if (!Directory.Exists(path))
-                    throw new DirectoryNotFoundException("Path does not exist or it was written wrongly.");
+                while (true)
+                {
+                    path = Console.ReadLine();
 
-                Console.Write("Do you want to backup folder? ");
+                    if (!Directory.Exists(path))
+                        Console.WriteLine("Path does not exist or it was written wrongly. Insert path.");
+                    else
+                        break;
+                }
 
                 Console.Write("Start character position: ");
                 int position = int.Parse(Console.ReadLine());

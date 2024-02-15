@@ -12,10 +12,17 @@ namespace FindString
                 Console.WriteLine("========== Rename Files ==========");
 
                 Console.Write("Insert path: ");
-                string path = Console.ReadLine();
+                string path = "";
 
-                if (!Directory.Exists(path))
-                    throw new DirectoryNotFoundException("Path does not exist or it was written wrongly.");
+                while (true)
+                {
+                    path = Console.ReadLine();
+
+                    if (!Directory.Exists(path))
+                        Console.WriteLine("Path does not exist or it was written wrongly. Insert path.");
+                    else
+                        break;
+                }
 
                 DirectoryInfo d = new DirectoryInfo(path);
                 FileInfo[] infos = d.GetFiles();
@@ -23,14 +30,12 @@ namespace FindString
                 if (infos.Length == 0)
                 {
                     Console.WriteLine("No files found.");
-                    Console.WriteLine("Press any key to close the window.");
-                    Console.ReadKey();
-                    Environment.Exit(0);
+                    RenameFiles();
                 }
 
-                bool answer = Helper.AskBool("Do you want to backup folder?");
+                bool backup = Helper.AskBool("Do you want to backup folder? ");
 
-                if (answer)
+                if (backup)
                 {
                     Console.Write("Insert destination path: ");
                     string destinationPath = Console.ReadLine();
@@ -53,6 +58,11 @@ namespace FindString
                 }
 
                 Console.WriteLine($"Files renamed: {counterFiles}");
+
+                bool repeatOperation = Helper.AskBool("Do you want to repeat the operation with other files? ");
+
+                if (repeatOperation)
+                    RenameFiles();
             }
             catch (Exception ex)
             {

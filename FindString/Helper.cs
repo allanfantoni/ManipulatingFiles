@@ -13,20 +13,18 @@ namespace FindString
             while (true)
             {
                 string answer = Console.ReadLine();
-                if (answer != null && answer == "y")
+                if (answer != null && (answer == "y" || answer == "Y"))
                 {
                     boolToReturn = true;
                     break;
                 }
-                else if (answer != null && answer == "n")
+                else if (answer != null && (answer == "n" || answer == "N"))
                 {
                     boolToReturn = false;
                     break;
                 }
                 else
-                {
-                    Console.Write("Only y or n allowed.");
-                }
+                    Console.Write($"Only y, Y, n or N allowed. {question}");
             }
 
             return boolToReturn;
@@ -52,7 +50,6 @@ namespace FindString
         public static void CopyDirectory(string sourcePath, string destinationPath)
         {
             var dir = new DirectoryInfo(sourcePath);
-            DirectoryInfo[] dirs = dir.GetDirectories();
             Directory.CreateDirectory(destinationPath);
 
             foreach (FileInfo file in dir.GetFiles())

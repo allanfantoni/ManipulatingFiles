@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace FindString
 {
@@ -9,14 +8,16 @@ namespace FindString
         {
             Console.WriteLine("========== Manipulating Files ==========");
             Console.WriteLine("Choose an option: \n1- Find string in files. \n2- Rename files.");
-            int option = int.Parse(Console.ReadLine());
+            int option;
 
-            if (option != 1 && option != 2)
+            while (true)
             {
-                Console.WriteLine("Option does not exist.");
-                Console.WriteLine("Press any key to close the window.");
-                Console.ReadKey();
-                Environment.Exit(0);
+                option = int.Parse(Console.ReadLine());
+
+                if (option != 1 && option != 2)
+                    Console.WriteLine("Option does not exist. Choose an option.");
+                else
+                    break;
             }
 
             if (option == 1)

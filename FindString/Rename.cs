@@ -9,20 +9,9 @@ namespace FindString
         {
             try
             {
-                Console.WriteLine("========== Rename Files ==========");
+                Console.WriteLine("========== Renaming Files ==========");
 
-                Console.Write("Insert path: ");
-                string path = "";
-
-                while (true)
-                {
-                    path = Console.ReadLine();
-
-                    if (!Directory.Exists(path))
-                        Console.WriteLine("Path does not exist or it was written wrongly. Insert path.");
-                    else
-                        break;
-                }
+                string path = Helper.InsertPath();
 
                 DirectoryInfo d = new DirectoryInfo(path);
                 FileInfo[] infos = d.GetFiles();
@@ -43,10 +32,10 @@ namespace FindString
                     Helper.CopyDirectory(path, destinationPath);
                 }
 
-                Console.WriteLine("Enter the old value of the string: ");
+                Console.Write("Enter the old value of the string: ");
                 string oldValue = Console.ReadLine();
 
-                Console.WriteLine("Enter the new value of the string: ");
+                Console.Write("Enter the new value of the string: ");
                 string newValue = Console.ReadLine();
 
                 var counterFiles = 0;

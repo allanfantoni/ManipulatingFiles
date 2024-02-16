@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FindString
 {
@@ -6,24 +7,43 @@ namespace FindString
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("========== Manipulating Files ==========");
-            Console.WriteLine("Choose an option: \n1- Find string in files. \n2- Rename files.");
+            bool running = true;
             int option;
+            List<int> listOfOptions = new List<int> { 1, 2, 3 };
+            Console.WriteLine("========== Manipulating Files ==========");
 
-            while (true)
+            while (running)
             {
-                option = int.Parse(Console.ReadLine());
+                option = Helper.AskInt("Choose an option: \n" +
+                    "1- Find string in files \n" +
+                    "2- Rename files \n" +
+                    "3- Remove lines of files \n");
 
-                if (option != 1 && option != 2)
-                    Console.WriteLine("Option does not exist. Choose an option.");
+                if (listOfOptions.IndexOf(option) == -1)
+                    Console.WriteLine("Option does not exist.");
                 else
-                    break;
-            }
+                {
+                    switch (option)
+                    {
+                        case 1:
+                            Search.SearchForString();
+                            break;
+                        case 2:
+                            Rename.RenameFiles();
+                            break;
+                        case 3:
+                            Remove.RemoveLines();
+                            break;
+                        default:
+                            break;
+                    }
 
-            if (option == 1)
-                Search.SearchForString();
-            else if (option == 2)
-                Rename.RenameFiles();
+                    bool performOtherOperation = Helper.AskBool("Do you want to choose another operation to do? ");
+
+                    if (!performOtherOperation)
+                        running = false;
+                }
+            }
 
             Console.WriteLine("Press any key to close the window.");
             Console.ReadKey();

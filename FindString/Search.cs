@@ -9,19 +9,17 @@ namespace FindString
         {
             try
             {
-                Console.WriteLine("========== Search For String ==========");
+                Console.WriteLine("========== Searching For String ==========");
 
-                Console.Write("Insert path: ");
-                string path = "";
+                string path = Helper.InsertPath();
 
-                while (true)
+                DirectoryInfo d = new DirectoryInfo(path);
+                FileInfo[] infos = d.GetFiles();
+
+                if (infos.Length == 0)
                 {
-                    path = Console.ReadLine();
-
-                    if (!Directory.Exists(path))
-                        Console.WriteLine("Path does not exist or it was written wrongly. Insert path.");
-                    else
-                        break;
+                    Console.WriteLine("No files found.");
+                    SearchForString();
                 }
 
                 Console.Write("Start character position: ");

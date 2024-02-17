@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33529.622
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindString", "FindString\FindString.csproj", "{3F061C7E-855F-466A-AB72-618045AAF3A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManipulatingFiles", "ManipulatingFiles\ManipulatingFiles.csproj", "{3F061C7E-855F-466A-AB72-618045AAF3A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

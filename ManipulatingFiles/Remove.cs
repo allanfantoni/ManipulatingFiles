@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace FindString
+namespace ManipulatingFiles
 {
     public class Remove
     {
@@ -64,8 +64,7 @@ namespace FindString
             foreach (string file in files)
             {
                 string[] lines = File.ReadAllLines(file);
-                //File.WriteAllLines(file, lines.Skip(linesToRemove).ToArray());
-                Helper.WriteAllLinesBetter(file, lines.Skip(linesToRemove).ToArray());
+                Helper.WriteAllLines(file, lines.Skip(linesToRemove).ToArray());
             }
 
             Console.WriteLine($"Files modified: {files.Count()}");
@@ -83,7 +82,7 @@ namespace FindString
             foreach (string file in files)
             {
                 string[] lines = File.ReadAllLines(file);
-                Helper.WriteAllLinesBetter(file, lines.Take(lines.Length - linesToRemove).ToArray());
+                Helper.WriteAllLines(file, lines.Take(lines.Length - linesToRemove).ToArray());
             }
 
             Console.WriteLine($"Files modified: {files.Count()}");

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace FindString
+namespace ManipulatingFiles
 {
     public class Search
     {
@@ -21,17 +21,15 @@ namespace FindString
                     Console.WriteLine("No files found.");
                     SearchForString();
                 }
+                
+                int position = Helper.AskInt("Start character position: ");
 
-                Console.Write("Start character position: ");
-                int position = int.Parse(Console.ReadLine());
-
-                Console.Write("Length: ");
-                int length = int.Parse(Console.ReadLine());
+                int length = Helper.AskInt("Length: ");
 
                 Console.Write("Char/string to search: ");
                 string text = Console.ReadLine();
 
-                var counterFiles = 0;
+                int counterFiles = 0;
 
                 string[] files = Directory.GetFiles(path);
 
@@ -39,8 +37,8 @@ namespace FindString
                 {
                     using (StreamReader sr = new StreamReader(file))
                     {
-                        var counterLines = 0;
-                        var line = "";
+                        int counterLines = 0;
+                        string line = "";
 
                         while ((line = sr.ReadLine()) != null)
                         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace FindString
+namespace ManipulatingFiles
 {
     public class Rename
     {
@@ -38,7 +38,7 @@ namespace FindString
                 Console.Write("Enter the new value of the string: ");
                 string newValue = Console.ReadLine();
 
-                var counterFiles = 0;
+                int counterFiles = 0;
 
                 foreach (FileInfo f in infos)
                 {

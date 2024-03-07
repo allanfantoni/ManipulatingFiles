@@ -11,7 +11,7 @@ namespace ManipulatingFiles
             {
                 Console.WriteLine("========== Renaming Files ==========");
 
-                string path = Helper.InsertPath();
+                string path = Helper.EnterPath("Enter path of the file(s): ");
 
                 DirectoryInfo d = new DirectoryInfo(path);
                 FileInfo[] infos = d.GetFiles();
@@ -26,8 +26,7 @@ namespace ManipulatingFiles
 
                 if (backup)
                 {
-                    Console.Write("Insert destination path: ");
-                    string destinationPath = Console.ReadLine();
+                    string destinationPath = Helper.EnterPath("Enter destination path: ");
 
                     Helper.CopyDirectory(path, destinationPath);
                 }

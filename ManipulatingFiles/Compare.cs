@@ -12,19 +12,17 @@ namespace ManipulatingFiles
             {
                 Console.WriteLine("========== Comparing File Names ==========");
 
-                string pathToMoveFiles = Helper.InsertPath();
-                string pathToCompare = Helper.InsertPath();
-                string pathToReceiveFiles = "";
+                string pathToMoveFiles = Helper.EnterPath("Enter path to move the file(s): ");
+                string pathToCompare = Helper.EnterPath("Enter path to compare the file(s): ");
 
-                bool move = Helper.AskBool("Do you want to move those files from folder 1 not in folder 2 to a third folder? ");
+                bool move = Helper.AskBool("Do you want to move those files from folder 1 present in folder 2 to a third folder? ");
 
-                if (move)
-                    pathToReceiveFiles = Helper.InsertPath();
+                string pathToReceiveFiles = move ? Helper.EnterPath("Enter path to receive the file(s): ") : "";
 
                 string[] filesFolder1 = Directory.GetFiles(pathToMoveFiles).Select(Path.GetFileName).ToArray();
                 string[] filesFolder2 = Directory.GetFiles(pathToCompare).Select(Path.GetFileName).ToArray();
 
-                Console.WriteLine("Files in folder 1 and in folder 2:");
+                Console.WriteLine("Files in both folders:");
 
                 int counterFiles = 0;
 
@@ -47,7 +45,7 @@ namespace ManipulatingFiles
 
                             File.Move(sourceFilePath, destinationFilePath);
 
-                            Console.WriteLine($"{counterFiles} - File '{file}' copied to folder 3.");
+                            Console.WriteLine($"{counterFiles} - File '{file}' copied to destination folder.");
                         }
                     }
                 }

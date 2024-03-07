@@ -11,7 +11,7 @@ namespace ManipulatingFiles
             {
                 Console.WriteLine("========== Searching For String ==========");
 
-                string path = Helper.InsertPath();
+                string path = Helper.EnterPath("Enter path of the file(s): ");
 
                 DirectoryInfo d = new DirectoryInfo(path);
                 FileInfo[] infos = d.GetFiles();

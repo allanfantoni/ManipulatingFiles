@@ -61,9 +61,9 @@ namespace ManipulatingFiles
             }
         }
 
-        public static string InsertPath()
+        public static string EnterPath(string personalizedText)
         {
-            Console.Write("Insert path: ");
+            Console.Write(personalizedText);
             string path;
 
             while (true)

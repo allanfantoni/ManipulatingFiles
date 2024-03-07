@@ -12,7 +12,7 @@ namespace ManipulatingFiles
             {
                 Console.WriteLine("========== Removing Lines ==========");
 
-                string path = Helper.InsertPath();
+                string path = Helper.EnterPath("Enter path of the file(s): ");
 
                 DirectoryInfo d = new DirectoryInfo(path);
                 FileInfo[] infos = d.GetFiles();
@@ -27,8 +27,7 @@ namespace ManipulatingFiles
 
                 if (backup)
                 {
-                    Console.Write("Insert destination path: ");
-                    string destinationPath = Console.ReadLine();
+                    string destinationPath = Helper.EnterPath("Enter destination path: ");
 
                     Helper.CopyDirectory(path, destinationPath);
                 }
@@ -55,8 +54,7 @@ namespace ManipulatingFiles
         {
             Console.WriteLine("========== Remove Lines at the Beginning ==========");
 
-            Console.Write("Enter how many lines do you want to remove: ");
-            int linesToRemove = int.Parse(Console.ReadLine());
+            int linesToRemove = Helper.AskInt("Enter how many lines do you want to remove: ");
 
             string[] files = Directory.GetFiles(path);
 
@@ -73,8 +71,7 @@ namespace ManipulatingFiles
         {
             Console.WriteLine("========== Remove Lines at the End ==========");
 
-            Console.Write("Enter how many lines do you want to remove: ");
-            int linesToRemove = int.Parse(Console.ReadLine());
+            int linesToRemove = Helper.AskInt("Enter how many lines do you want to remove: ");
 
             string[] files = Directory.GetFiles(path);
 

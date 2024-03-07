@@ -19,7 +19,6 @@ namespace ManipulatingFiles
                     "2- Rename files \n" +
                     "3- Remove lines of files \n" +
                     "4- Compare file names in different folders \n");
-                    
 
                 if (listOfOptions.IndexOf(option) == -1)
                     Console.WriteLine("Option does not exist.");
@@ -44,7 +43,6 @@ namespace ManipulatingFiles
                     }
 
                     bool performOtherOperation = Helper.AskBool("Do you want to choose another operation to do? ");
-
                     
                     if (!performOtherOperation)
                         running = false;

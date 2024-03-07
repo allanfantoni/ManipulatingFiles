@@ -44,7 +44,6 @@ namespace ManipulatingFiles
 
                 if (repeatOperation)
                     RemoveLines();
-
             }
             catch (Exception ex)
             {

@@ -56,7 +56,6 @@ namespace ManipulatingFiles
 
                 Console.WriteLine($"Files read: {counterFiles}");
             }
-
             catch (Exception ex)
             {
                 Console.WriteLine($"Error message: {ex.Message}");

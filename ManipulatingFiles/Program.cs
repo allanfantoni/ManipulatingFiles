@@ -9,7 +9,7 @@ namespace ManipulatingFiles
         {
             bool running = true;
             int option;
-            List<int> listOfOptions = new List<int> { 1, 2, 3 };
+            List<int> listOfOptions = new List<int> { 1, 2, 3, 4 };
             Console.WriteLine("========== Manipulating Files ==========");
 
             while (running)
@@ -17,7 +17,9 @@ namespace ManipulatingFiles
                 option = Helper.AskInt("Choose an option: \n" +
                     "1- Find string in files \n" +
                     "2- Rename files \n" +
-                    "3- Remove lines of files \n");
+                    "3- Remove lines of files \n" +
+                    "4- Compare file names in different folders \n");
+                    
 
                 if (listOfOptions.IndexOf(option) == -1)
                     Console.WriteLine("Option does not exist.");
@@ -34,12 +36,16 @@ namespace ManipulatingFiles
                         case 3:
                             Remove.RemoveLines();
                             break;
+                        case 4:
+                            Compare.CompareFileNames();
+                            break;
                         default:
                             break;
                     }
 
                     bool performOtherOperation = Helper.AskBool("Do you want to choose another operation to do? ");
 
+                    
                     if (!performOtherOperation)
                         running = false;
                 }

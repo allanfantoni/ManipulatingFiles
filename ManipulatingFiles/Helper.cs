@@ -3,9 +3,9 @@ using System.IO;
 
 namespace ManipulatingFiles
 {
-    public class Helper
+    internal class Helper
     {
-        public static bool AskBool(string question)
+        internal static bool AskBool(string question)
         {
             bool boolToReturn;
             Console.Write(question);
@@ -31,7 +31,7 @@ namespace ManipulatingFiles
             return boolToReturn;
         }
 
-        public static int AskInt(string question)
+        internal static int AskInt(string question)
         {
             int intToReturn;
             Console.Write(question);
@@ -49,7 +49,7 @@ namespace ManipulatingFiles
             return intToReturn;
         }
 
-        public static void CopyDirectory(string sourcePath, string destinationPath)
+        internal static void CopyDirectory(string sourcePath, string destinationPath)
         {
             var dir = new DirectoryInfo(sourcePath);
             Directory.CreateDirectory(destinationPath);
@@ -61,7 +61,7 @@ namespace ManipulatingFiles
             }
         }
 
-        public static string EnterPath(string personalizedText)
+        internal static string EnterPath(string personalizedText)
         {
             Console.Write(personalizedText);
             string path;
@@ -79,7 +79,7 @@ namespace ManipulatingFiles
             return path;
         }
 
-        public static void WriteAllLines(string path, params string[] lines)
+        internal static void WriteAllLines(string path, params string[] lines)
         {
             using (FileStream stream = File.OpenWrite(path))
             {

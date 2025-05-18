@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace ManipulatingFiles
 {
-    public class Compare
+    internal class Compare
     {
-        public static void CompareFileNames()
+        internal static void CompareFileNames()
         {
             try
             {

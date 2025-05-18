@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace ManipulatingFiles
 {
-    public class Remove
+    internal class Remove
     {
-        public static void RemoveLines()
+        internal static void RemoveLines()
         {
             try
             {
@@ -50,7 +50,7 @@ namespace ManipulatingFiles
             }
         }
 
-        public static void RemoveLinesAtBeginning(string path)
+        private static void RemoveLinesAtBeginning(string path)
         {
             Console.WriteLine("========== Remove Lines at the Beginning ==========");
 
@@ -67,7 +67,7 @@ namespace ManipulatingFiles
             Console.WriteLine($"Files modified: {files.Count()}");
         }
 
-        public static void RemoveLinesAtEnd(string path)
+        private static void RemoveLinesAtEnd(string path)
         {
             Console.WriteLine("========== Remove Lines at the End ==========");
 

@@ -3,9 +3,9 @@ using System.IO;
 
 namespace ManipulatingFiles
 {
-    public class Rename
+    internal class Rename
     {
-        public static void RenameFiles()
+        internal static void RenameFiles()
         {
             try
             {

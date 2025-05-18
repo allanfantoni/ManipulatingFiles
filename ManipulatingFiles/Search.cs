@@ -3,9 +3,9 @@ using System.IO;
 
 namespace ManipulatingFiles
 {
-    public class Search
+    internal class Search
     {
-        public static void SearchForString()
+        internal static void SearchForString()
         {
             try
             {

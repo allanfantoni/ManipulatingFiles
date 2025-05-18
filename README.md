@@ -1,3 +1,5 @@
+[![Downloads](https://img.shields.io/github/downloads/allanfantoni/ManipulatingFiles/ManipulatingFiles.exe?style=flat&label=Downloads&color=%23FF4500)](https://github.com/allanfantoni/ManipulatingFiles/releases)
+
 # Manipulating Files
 
 Console application made in C# to allow the user to manipulate files.

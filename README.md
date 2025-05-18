@@ -1,4 +1,4 @@
-[![Downloads](https://img.shields.io/github/downloads/allanfantoni/ManipulatingFiles/ManipulatingFiles.exe?style=flat&label=Downloads&color=%23FF4500)](https://github.com/allanfantoni/ManipulatingFiles/releases)
+[![Downloads](https://img.shields.io/github/downloads/allanfantoni/ManipulatingFiles/ManipulatingFiles.exe?style=flat&label=Downloads&color=%23512bd4)](https://github.com/allanfantoni/ManipulatingFiles/releases)
 
 # Manipulating Files
 

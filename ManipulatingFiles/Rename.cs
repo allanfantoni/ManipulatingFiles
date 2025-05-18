@@ -9,7 +9,7 @@ namespace ManipulatingFiles
         {
             try
             {
-                Console.WriteLine("========== Renaming Files ==========");
+                Console.WriteLine("\n========== Renaming Files ==========");
 
                 string path = Helper.EnterPath("Enter path of the file(s): ");
 

@@ -10,7 +10,7 @@ namespace ManipulatingFiles
         {
             try
             {
-                Console.WriteLine("========== Removing Lines ==========");
+                Console.WriteLine("\n========== Removing Lines ==========");
 
                 string path = Helper.EnterPath("Enter path of the file(s): ");
 
@@ -52,7 +52,7 @@ namespace ManipulatingFiles
 
         private static void RemoveLinesAtBeginning(string path)
         {
-            Console.WriteLine("========== Remove Lines at the Beginning ==========");
+            Console.WriteLine("\n========== Remove Lines at the Beginning ==========");
 
             int linesToRemove = Helper.AskInt("Enter how many lines do you want to remove: ");
 
@@ -69,7 +69,7 @@ namespace ManipulatingFiles
 
         private static void RemoveLinesAtEnd(string path)
         {
-            Console.WriteLine("========== Remove Lines at the End ==========");
+            Console.WriteLine("\n========== Remove Lines at the End ==========");
 
             int linesToRemove = Helper.AskInt("Enter how many lines do you want to remove: ");
 

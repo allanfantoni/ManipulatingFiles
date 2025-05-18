@@ -9,7 +9,7 @@ namespace ManipulatingFiles
         {
             try
             {
-                Console.WriteLine("========== Searching For String ==========");
+                Console.WriteLine("\n========== Searching For String ==========");
 
                 string path = Helper.EnterPath("Enter path of the file(s): ");
 

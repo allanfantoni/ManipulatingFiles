@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Contexts;
 
 namespace ManipulatingFiles
 {
@@ -10,7 +11,8 @@ namespace ManipulatingFiles
             bool running = true;
             int option;
             List<int> listOfOptions = new List<int> { 1, 2, 3, 4 };
-            Console.WriteLine("========== Manipulating Files ==========");
+            Console.WriteLine("========== Manipulating Files ==========\n");
+            Console.WriteLine("Always make sure to perform a backup when renaming or changing file contents.\n");
 
             while (running)
             {

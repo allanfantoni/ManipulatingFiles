@@ -11,5 +11,5 @@ Console application made in C# to allow the user to manipulate files.
 
 ## .NET and C# version
 
-.NET Framework 4.7.2
-C# 7.3
+- .NET Framework 4.7.2
+- C# 7.3

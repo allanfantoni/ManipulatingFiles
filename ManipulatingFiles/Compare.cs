@@ -10,7 +10,7 @@ namespace ManipulatingFiles
         {
             try
             {
-                Console.WriteLine("========== Comparing File Names ==========");
+                Console.WriteLine("\n========== Comparing File Names ==========");
 
                 string pathToMoveFiles = Helper.EnterPath("Enter path to move the file(s): ");
                 string pathToCompare = Helper.EnterPath("Enter path to compare the file(s): ");
